@@ -1,0 +1,8 @@
+#!/bin/bash
+
+DIR="$(dirname -- ${BASH_SOURCE[0]})"
+if [ ! -f "$DIR/bazelisk" ]; then
+	wget -O "$DIR/bazelisk" https://github.com/bazelbuild/bazelisk/releases/download/v1.15.0/bazelisk-linux-amd64
+	chmod +x "$DIR/bazelisk"
+fi
+"$DIR/bazelisk" "$@"
