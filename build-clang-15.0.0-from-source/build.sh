@@ -10,7 +10,7 @@ cmake -G "Unix Makefiles" -S llvm -B build -DCMAKE_BUILD_TYPE="Release" \
                                 -DLLVM_STATIC_LINK_CXX_STDLIB=On
 
 cd build
-make $(nproc)
+make -j$(nproc)
 make install
 
 cd ../..
